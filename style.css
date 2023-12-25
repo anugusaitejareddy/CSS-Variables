@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #162e3f;
+  color: white;
+}
+
+h1 {
+  padding: 0 2rem;
+}
+
+.controls {
+  padding: 2rem;
+
+  font-size: 2rem;
+}
+
+img {
+  --spacing: 24px;
+  --background-color: #ceffad;
+  --blur: 2px;
+
+  width: 75%;
+  padding: var(--spacing);
+
+  background-color: var(--background-color);
+  filter: blur(var(--blur));
+}

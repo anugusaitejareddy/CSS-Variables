@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Update CSS variables with JS</title>
+  </head>
+  <body>
+    <h1>Update CSS variables with JS</h1>
+    <div class="controls">
+      <label for="spacing">Spacing:</label>
+      <input type="range" id="spacing" min="0" max="100" />
+      <label for="blur">Blur:</label>
+      <input type="range" id="blur" min="0" max="5" />
+      <label for="baseColor">Base Color:</label>
+      <input type="color" id="baseColor" />
+    </div>
+    <img
+      src="https://images.unsplash.com/photo-1561488111-5d800fd56b8a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt=""
+    />
+    <script>
+      const spacing = document.querySelector("#spacing");
+      const blur = document.querySelector("#blur");
+      const baseColor = document.querySelector("#baseColor");
+      const image = document.querySelector("img");
+
+      console.log(window.getComputedStyle(image).getPropertyValue("--blur"));
+
+      function updateSpacing() {
+        image.style.setProperty("--spacing", `${spacing.value}px`);
+      }
+
+      function updateBlur() {
+        image.style.setProperty("--blur", `${blur.value}px`);
+      }
+
+      function updateBaseColor() {
+        image.style.setProperty("--background-color", `${baseColor.value}`);
+      }
+
+      spacing.addEventListener("change", updateSpacing);
+      blur.addEventListener("change", updateBlur);
+      baseColor.addEventListener("change", updateBaseColor);
+    </script>
+  </body>
+</html>

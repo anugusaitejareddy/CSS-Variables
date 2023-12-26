@@ -19,12 +19,12 @@ h1 {
 
 img {
   --spacing: 24px;
-  --background-color: #ceffad;
+  --base: #ceffad;
   --blur: 2px;
 
   width: 75%;
   padding: var(--spacing);
 
-  background-color: var(--background-color);
+  background-color: var(--base);
   filter: blur(var(--blur));
 }
